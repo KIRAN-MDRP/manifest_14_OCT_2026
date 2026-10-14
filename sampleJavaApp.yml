@@ -1,19 +1,19 @@
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: javaapprc
+  name: java-app-rc
 spec:
   replicas: 4
   selector:
-    app: javapp
+    app: java-app
   template:
     metadata:
-      name: javaapp
+      name: java-app
       labels:
-        app: javaapp
+        app: java-app
     spec:
       containers:
-        - name: javaappcontainer
+        - name: java-app-container
           image: kirankumarmandarapu/app1_10_10_2026:5
           ports:
             - containerPort: 8080
