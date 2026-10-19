@@ -4,7 +4,7 @@ metadata:
   name: java-app-service
   labels:
     app: java-app
-    version: 1.0.2
+    version: 1.0.1
 spec:
   type: NodePort
   ports:
@@ -13,5 +13,5 @@ spec:
       protocol: TCP
   selector: 
     app: java-app
-    version: 1.0.2
+    version: 1.0.1
      
