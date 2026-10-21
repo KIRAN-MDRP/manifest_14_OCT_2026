@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
        - name: java-app-container
-         image: kirankumarmandarapu/app1_10_10_2026:1
+         image: kirankumarmandarapu/app1_10_10_2026:5
          ports:
           - containerPort: 8000
