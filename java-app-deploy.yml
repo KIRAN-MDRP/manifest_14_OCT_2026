@@ -18,4 +18,4 @@ spec:
        - name: java-app-container
          image: kirankumarmandarapu/secondapp_21_10_2026:1
          ports:
-          - containerPort: 8000
+          - containerPort: 8080
