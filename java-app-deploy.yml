@@ -14,11 +14,12 @@ spec:
       labels:
         app: java-app
     spec:
+      imagePullSecrets:
+        - name: ecr-secret 
       containers:
        - name: java-app-container
          image: 745125233316.dkr.ecr.us-east-1.amazonaws.com/secondapp3:2
          imagePullPolicy: Always
          ports:
           - containerPort: 8080
-         imagePullSecrets:
-          - name: ecr-secret   
+            
