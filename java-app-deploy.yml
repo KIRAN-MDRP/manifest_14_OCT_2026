@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
        - name: java-app-container
-         image: kirankumarmandarapu/secondapp_21_10_2026:3
+         image: 745125233316.dkr.ecr.us-east-1.amazonaws.com/secondapp3:2
          ports:
           - containerPort: 8080
