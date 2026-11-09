@@ -1,0 +1,27 @@
+# Argo CD Application: deploys helm/myjavaapp with values-prod.yaml into namespace "production".
+# MANUAL sync: Argo CD shows OutOfSync after a push, and a person presses SYNC (or runs argocd app sync).
+# Needs the ecr-secret in the production namespace first (see ARGOCD_LAB.md, step 8).
+# kubectl apply -f argocd/application-prod.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-prod
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: app-prod
+  source:
+    repoURL: https://github.com/KIRAN-MDRP/manifest_14_OCT_2026.git
+    targetRevision: main
+    path: helm/java-app
+    helm:
+      releaseName: app-prod
+      valueFiles:
+        - values-prod.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: production
+  syncPolicy:                       # no "automated" block = manual sync
+    syncOptions:
+      - CreateNamespace=true
