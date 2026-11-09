@@ -10,7 +10,7 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: app-prod
+  project: default
   source:
     repoURL: https://github.com/KIRAN-MDRP/manifest_14_OCT_2026.git
     targetRevision: main
