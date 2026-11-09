@@ -3,14 +3,14 @@
 # Needs the ecr-secret in the production namespace first (see ARGOCD_LAB.md, step 8).
 # kubectl apply -f argocd/application-prod.yaml
 apiVersion: argoproj.io/v1alpha1
-kind: Application
+kind: AppProject
 metadata:
   name: app-prod
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: default
+  project: app-prod
   source:
     repoURL: https://github.com/KIRAN-MDRP/manifest_14_OCT_2026.git
     targetRevision: main
