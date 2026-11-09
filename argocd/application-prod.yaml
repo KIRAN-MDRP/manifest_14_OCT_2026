@@ -3,7 +3,7 @@
 # Needs the ecr-secret in the production namespace first (see ARGOCD_LAB.md, step 8).
 # kubectl apply -f argocd/application-prod.yaml
 apiVersion: argoproj.io/v1alpha1
-kind: AppProject
+kind: Application
 metadata:
   name: app-prod
   namespace: argocd
